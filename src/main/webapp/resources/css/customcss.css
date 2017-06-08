@@ -1,0 +1,36 @@
+.navbar {
+	margin-bottom: 0!important;
+}
+
+.myTitle{
+	color:#ffbf00;
+}
+
+.buttonWarningColor{
+	color:#ffbf00;
+}
+
+.pageDevider{
+	height: 65px;
+	background-color:#ffbf00;
+}
+
+.content{
+	height: 450px;
+	margin:0;
+}
+
+#footer {
+	bottom: 0px;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 280px;
+	background:
+		/* color overlay */
+			linear-gradient(
+					rgba(240, 212, 0, 0.45),
+					rgba(0, 0, 0, 0.45)
+			),
+				/* image to overlay */
+			url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);
+}

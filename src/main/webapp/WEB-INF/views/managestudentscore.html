@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+   
+	<link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico">
+	<title>Student Score</title>
+
+	<link rel="stylesheet" href="/resources/css/customcss.css"> <!-- CUSTOM css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Boootstrap css CDN -->
+
+	<!-- boootstrap, jquery, angular frameworks -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- JQuery js CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Bootstrap js CDN -->
+	<script src="/resources/frameworks/angular/angular.js"></script>
+
+	<script src="/resources/js/ManageStudentScoreService.js"></script> <!-- Bootstrap js CDN -->
+
+</head>
+<body ng-app="ManageStudentScore" ng-controller="ManageStudentScoreController">	<!-- AngularJS directive -->
+	<a id="Author"></a>
+
+	<!-- TOP NAVIGATION Include an external file using angular ng-include directive -->
+	<div  ng-include="'topnavigation.html'">
+	</div>
+	
+	<!-- Content Page------------->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3" style="text-align:center;">
+				<h1><small>Manage Score : </small><h4><small>| Score |</small></h4></small></h1>
+				<br>
+				<input ng-model="searchText" class="form-control" id="inputsearch" type="text" placeholder="Search by name or surname or combination">
+								
+				<br>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4><small>Edit | Delete</small></h4>
+					</div>
+					<table class="table" style="text-align:left;">
+						<thead>
+							<tr>
+								<th>ID</th><th>Name</th><th>Surname</th><th>Current Score</th><th>Action </th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr ng-repeat="student in students | filter:searchText">
+								<td> {{ student.id }} </td>
+								<td> {{ student.name }} </td>
+								<td> {{ student.surname}} </td>
+								<td> {{ student.score}} </td>
+								<td><button ng-click="editScore(student)" type="submit" class="btn btn-success btn-sm">Capture Score</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<hr/>
+						
+				<form ng-submit="captureScore()">
+					<div class="form-group form-inline" style="text-align:left;">
+						<label for="inputname">Name &nbsp;</label>
+						<input ng-model="studentFullName" class="form-control" id="inputname" type="text">
+						<label for="inputscore_save">Score &nbsp;</label>
+						<input ng-mdel="newStudentScore" class="form-control" id="inputscore_save" type="text">
+					</div>
+					<button type="submit" class="btn btn-success btn-lg btn-block buttonWarningColor">
+						Save
+					</button>
+				</form>
+				
+				<hr/>
+				
+				</small><h4><small> | Average Score | </small></h4></small></h1>
+				<br/>
+				<button ng-click="calculateScore()" type="submit" class="btn btn-success btn-md">View Average</button>
+				<br/>
+				<br/>
+				<form>
+					<div class="form-group form-inline" style="text-align:center;">
+						<label for="inputaveragescore_view">Score &nbsp;</label>
+						<input ng-model="averageScore" class="form-control" id="inputaveragescore_view" type="text">
+					</div>
+				</form>
+				
+				<hr/>
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<!-- End of Content Page------>
+	
+	<!-- Page devider div -->
+	<div class="pageDevider">
+	</div>
+
+	<!-- FOOTER, Include an external file using angular ng-include directive -->
+	<div ng-include="'footer.html'"> 
+	</div>
+	
+</body>
+</html>

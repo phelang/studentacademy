@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	
+	<link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico">
+    <title>About</title>
+
+	<link rel="stylesheet" href="/resources/css/customcss.css"> <!-- CUSTOM css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Boootstrap css CDN -->
+
+	<!-- boootstrap, jquery, angular frameworks -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- JQuery js CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Bootstrap js CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> <!-- AngularJS js CDN -->
+
+</head>
+<body ng-app="">	<!-- AngularJS directive -->
+	<a id="Author"></a>
+
+	<!-- TOP NAVIGATION Include an external file using angular ng-include directive -->
+	<div  ng-include="'topnavigation.html'">
+	</div>
+	<!-- Content Page------------->
+	<div class="container content">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3" style="text-align:center;">
+				<h1><small>Application walk through</small></h1>
+				<p class="text-muted">Distributed web application that allows users to capture student names and their scores.</p>
+				<br>
+				<p class="text-left text-muted">User</p>
+				<ul class="text-left text-muted">
+					<li>Create student details</li>
+					<li>Edit student details</li>
+					<li>Delete Student</li>
+					<li>Show all students</li>				 
+				</ul>
+				<br>
+				<p class="text-left text-muted">Student Score Management</p>
+				<ul class="text-left text-muted">
+					<li>Capture student score</li>
+					<li>Average score ( All students )</li>
+					<li>View student score</li>				  
+				</ul>
+			</div>
+		</div>
+	</div>
+		
+	<!-- End of Content Page------>
+	
+	<!-- Page devider div -->
+	<div class="pageDevider">
+	</div>
+	
+	<!-- FOOTER, Include an external file using angular ng-include directive -->
+	<div ng-include="'footer.html'"> 
+	</div>
+</body>
+</html>
